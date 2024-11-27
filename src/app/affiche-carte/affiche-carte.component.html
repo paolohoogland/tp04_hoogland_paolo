@@ -1,0 +1,8 @@
+<h2>Liste des Cartes</h2> 
+<div *ngFor="let carte of cartes()"> 
+<!-- no async because its a signal-->
+  <p>Nom : {{ carte.nomCarte }}</p>
+  <p>Code : {{ carte.codeCarte | codeMasque }}</p>
+  <p>Expiration : {{ carte.expiration }}</p>
+  <button (click)="deleteCarte(carte.id)">Supprimer</button>
+</div>
