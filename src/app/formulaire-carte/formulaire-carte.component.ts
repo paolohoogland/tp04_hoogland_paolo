@@ -15,10 +15,10 @@ export class FormulaireCarteComponent {
 
   constructor(private formBuilder: FormBuilder, private carteService: CarteService) {
     this.cardForm = this.formBuilder.group({
-      nomCarte: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-      codeCarte: ['', [Validators.required, Validators.pattern('^[0-9]{16}$')]],
-      ccv: ['', [Validators.required, Validators.pattern('^[0-9]{3}$')]],
-      expiration: ['', [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])\/[0-9]{2}$')]]
+      nomCarte: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]], // letters and spaces only
+      codeCarte: ['', [Validators.required, Validators.pattern('^[0-9]{16}$')]], // 16 digits
+      ccv: ['', [Validators.required, Validators.pattern('^[0-9]{3}$')]], // 3 digits
+      expiration: ['', [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])\/[0-9]{2}$')]] // MM/YY
     });
   }
 
